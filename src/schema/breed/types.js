@@ -4,7 +4,7 @@ export const BreedTypes = `#graphql
       name: String
     }
     extend type Query {
-      breed: Breed
+      breed(id: ID): Breed
       breeds: [Breed]
     }
     input BreedCreateDataInput {
