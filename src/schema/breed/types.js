@@ -7,17 +7,15 @@ export const BreedTypes = `#graphql
       breed(id: ID): Breed
       breeds: [Breed]
     }
-    input BreedCreateDataInput {
-        name: String
-    }
-    input BreedUpdateDataInput {
-        name: String
-    }
-    input BreedUpdateWhereInput {
-       is: ID
-    }
     extend type Mutation {
       breedCreate(data: BreedCreateDataInput!): Breed
-      breedUpdate(data: BreedUpdateDataInput!, where: BreedUpdateWhereInput!): Breed 
+      breedUpdate(data: BreedUpdateDataInput!, id: ID!): Breed
+      breedDelete(id: ID!): ID
+    }
+    input BreedCreateDataInput {
+      name: String
+    }
+    input BreedUpdateDataInput {
+      name: String
     }
 `;

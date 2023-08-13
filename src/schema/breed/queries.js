@@ -1,13 +1,10 @@
-import {connection} from '../../connection.js'
+import {db} from '../../connection.js'
 
 export const BreedQueries = {
     breeds: async () => {
-        //const result = await connection.select().from('breed');
-        const result = await connection('breed');
-        return result;
+        return await db('breed');
     },
-    breed: async (id) => {
-        const result = await connection('breed').where({'id': 1}).first();
-        return result;
+    breed: async (obj, args, context, info) => {
+        return await db('breed').where({'id': args.id}).first();
     },
 }

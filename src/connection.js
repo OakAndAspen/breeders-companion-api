@@ -1,6 +1,6 @@
 import knex from 'knex';
 
-export const connection = knex({
+export const db = knex({
   client: "mysql",
   connection: {
     host: "localhost",
