@@ -1,4 +1,3 @@
-//export { BreedModel } from './db.js'
 export { BreedTypes } from './types.js'
 export { BreedQueries } from './queries.js'
 export { BreedMutations } from './mutations.js'

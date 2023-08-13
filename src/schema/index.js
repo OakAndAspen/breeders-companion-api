@@ -1,17 +1,22 @@
 import { BreedTypes, BreedQueries, BreedMutations, BreedResolvers } from './breed/index.js'
+import { UserTypes, UserQueries, UserMutations, UserResolvers } from './user/index.js'
 
 export const typeDefs = `#graphql
      type Query
      type Mutation
      ${BreedTypes}
+     ${UserTypes}
 `
 
 export const resolvers = {
     Query: {
-        ... BreedQueries
+        ... BreedQueries,
+        ... UserQueries
     },
     Mutation: {
-        ... BreedMutations
+        ... BreedMutations,
+        ... UserMutations
     },
-    Breed: BreedResolvers
+    Breed: BreedResolvers,
+    User: UserResolvers
 }
