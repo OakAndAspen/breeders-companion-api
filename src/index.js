@@ -31,7 +31,9 @@ const { url } = await startStandaloneServer(server, {
     else {
         const secret = new TextEncoder().encode("mysupersecretphrase");
         let result = await jose.jwtVerify(token, secret);
-        return result.payload.user;
+        return {
+          user: result.payload.user
+        };
     }
     
   },
