@@ -1,7 +1,8 @@
 import {db} from '../../connection.js'
 
 export const BreedQueries = {
-    breeds: async () => {
+    breeds: async (obj, args, context, info) => {
+        console.log("ZE CONTEXT", context);
         return await db('breed');
     },
     breed: async (obj, args, context, info) => {
