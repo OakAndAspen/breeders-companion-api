@@ -2,14 +2,14 @@ export const DogTypes = `#graphql
     type Dog {
       id: ID
       breed: Breed
-      #owner: Person
+      owner: Person
       name: String
       callName: String
       color: String
       birthDate: String
       gender: Gender
       comments: String
-      #litter: Litter
+      litter: Litter
     }
     enum Gender {
       M
