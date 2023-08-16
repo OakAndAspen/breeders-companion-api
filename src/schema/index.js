@@ -4,6 +4,7 @@ import { UserTypes, UserQueries, UserMutations, UserResolvers } from './user/ind
 import { DogTypes, DogQueries, DogMutations, DogResolvers } from './dog/index.js'
 import { PersonTypes, PersonQueries, PersonMutations, PersonResolvers } from './person/index.js'
 import { BreederTypes, BreederQueries, BreederMutations, BreederResolvers } from './breeder/index.js'
+import { LitterTypes, LitterQueries, LitterMutations, LitterResolvers } from './litter/index.js'
 
 export const typeDefs = `#graphql
      type Query
@@ -14,6 +15,7 @@ export const typeDefs = `#graphql
      ${DogTypes}
      ${PersonTypes}
      ${BreederTypes}
+     ${LitterTypes}
 `
 
 export const resolvers = {
@@ -23,7 +25,8 @@ export const resolvers = {
         ... UserQueries,
         ... DogQueries,
         ... PersonQueries,
-        ... BreederQueries
+        ... BreederQueries,
+        ... LitterQueries
     },
     Mutation: {
         ... AuthMutations,
@@ -31,11 +34,13 @@ export const resolvers = {
         ... UserMutations,
         ... DogMutations,
         ... PersonMutations,
-        ... BreederMutations
+        ... BreederMutations,
+        ... LitterMutations
     },
     Breed: BreedResolvers,
     User: UserResolvers,
     Dog: DogResolvers,
     Person: PersonResolvers,
-    Breeder: BreederResolvers
+    Breeder: BreederResolvers,
+    Litter: LitterResolvers
 }
