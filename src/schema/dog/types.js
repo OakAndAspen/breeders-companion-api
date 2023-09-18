@@ -2,6 +2,7 @@ export const DogTypes = `#graphql
     type Dog {
       id: ID
       breed: Breed
+      breeder: Breeder
       owner: Person
       name: String
       callName: String
@@ -26,6 +27,7 @@ export const DogTypes = `#graphql
     }
     input DogCreateDataInput {
       breed: ID
+      breeder: ID
       owner: ID
       name: String
       callName: String
@@ -37,6 +39,7 @@ export const DogTypes = `#graphql
     }
     input DogUpdateDataInput {
       breed: ID
+      breeder: ID
       owner: ID
       name: String
       callName: String
@@ -45,5 +48,12 @@ export const DogTypes = `#graphql
       gender: Gender
       comments: String
       litter: ID
+    }
+    input DogFilter {
+      breed: ID
+      owner: ID
+      name: String
+      callName: String
+      gender: Gender
     }
 `;

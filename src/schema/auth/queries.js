@@ -17,7 +17,7 @@ export const AuthQueries = {
         .setProtectedHeader({ alg })
         .setIssuedAt()
         .setIssuer('breederscompanion')
-        .setExpirationTime('2h')
+        .setExpirationTime('2y')
         .sign(secret);
         
         return jwt;
