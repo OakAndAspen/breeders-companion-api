@@ -5,5 +5,10 @@ export const BreederResolvers = {
         return await db('person').where({
             'id': parent.owner
         }).first();
+    },
+    litters: async (parent, args) => {
+        return await db('litter').where({
+            'breeder': parent.id
+        });
     }
 }

@@ -51,6 +51,7 @@ export const DogTypes = `#graphql
     }
     input DogFilter {
       breed: ID
+      breeder: ID
       owner: ID
       name: String
       callName: String

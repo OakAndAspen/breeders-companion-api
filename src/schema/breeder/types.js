@@ -17,6 +17,7 @@ export const BreederTypes = `#graphql
       youtube: String
       youtubeFollowers: Int
       comments: String
+      litters: [Litter]
     }
     extend type Query {
       breeder(id: ID): Breeder
