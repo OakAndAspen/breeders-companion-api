@@ -6,6 +6,7 @@ export const LitterTypes = `#graphql
       breeder: Breeder
       name: String
       whelpingStartDate: String
+      puppies: [Dog]
     }
     extend type Query {
       litter(id: ID): Litter

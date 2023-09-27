@@ -15,5 +15,10 @@ export const LitterResolvers = {
         return await db('breeder').where({
             'id': parent.breeder
         }).first();
+    },
+    puppies: async (parent, args) => {
+        return await db('dog').where({
+            'litter': parent.id
+        });
     }
 }
