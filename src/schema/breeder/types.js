@@ -4,6 +4,7 @@ export const BreederTypes = `#graphql
       owner: Person
       name: String
       affix: String
+      isAffixAfter: Int
       website: String
       email: String
       phoneNumber: String
@@ -32,6 +33,7 @@ export const BreederTypes = `#graphql
       owner: ID
       name: String
       affix: String
+      isAffixAfter: Int
       website: String
       email: String
       phoneNumber: String
@@ -50,6 +52,7 @@ export const BreederTypes = `#graphql
       owner: ID
       name: String
       affix: String
+      isAffixAfter: Int
       website: String
       email: String
       phoneNumber: String
