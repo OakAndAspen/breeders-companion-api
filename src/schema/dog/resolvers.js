@@ -20,5 +20,10 @@ export const DogResolvers = {
         return await db('breeder').where({
             'id': parent.breeder
         }).first();
+    },
+    at: async (parent, args) => {
+        return await db('breeder').where({
+            'id': parent.at
+        }).first();
     }
 }
