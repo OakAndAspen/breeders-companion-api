@@ -9,7 +9,7 @@ export const PersonTypes = `#graphql
     }
     extend type Query {
       person(id: ID): Person
-      persons: [Person]
+      persons(filters: PersonFilters, orderBy: OrderBy, pagination: Pagination): [Person]
     }
     extend type Mutation {
       personCreate(data: PersonCreateDataInput!): Person
@@ -29,5 +29,8 @@ export const PersonTypes = `#graphql
       email: String
       phoneNumber: String
       comments: String
+    }
+    input PersonFilters {
+      name: String
     }
 `;

@@ -3,23 +3,23 @@ import {db} from '../../connection.js'
 export const BreedQueries = {
     breeds: async (obj, args, context, info) => {
         let query = db('breed')
-        
-        // Filters
         let where = {
             'user': context.user.id
         };
+        query.where(where)
 
-        query = query.where(where)
-        
-        if(args.filters?.name) {
-            query = query.andWhereILike("name", "%"+args.filters.name+"%")
-        }
+        // Filters
+        query.andWhere((builder) => {
+            if(args.filters?.name) {
+                builder.whereILike("name", "%"+args.filters.name+"%")
+            }
+        })
 
         // Sort
         let ob = args.orderBy;
-        let orderBy = ob?.field || "name";
+        let orderBy = ob?.field || "lastName";
         let direction = !!ob?.desc ? "desc" : "asc";
-        query = query.orderBy(orderBy, direction)
+        query.orderBy(orderBy, direction)
 
         // Pagination
         let p = args.pagination;
