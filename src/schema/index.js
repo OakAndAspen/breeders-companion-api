@@ -1,3 +1,4 @@
+import { GeneralTypes } from './types.js'
 import { AuthTypes, AuthQueries, AuthMutations } from './auth/index.js'
 import { BreedTypes, BreedQueries, BreedMutations, BreedResolvers } from './breed/index.js'
 import { UserTypes, UserQueries, UserMutations, UserResolvers } from './user/index.js'
@@ -9,6 +10,7 @@ import { LitterTypes, LitterQueries, LitterMutations, LitterResolvers } from './
 export const typeDefs = `#graphql
      type Query
      type Mutation
+     ${GeneralTypes}
      ${AuthTypes}
      ${BreedTypes}
      ${UserTypes}
