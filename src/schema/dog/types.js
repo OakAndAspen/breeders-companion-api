@@ -12,6 +12,7 @@ export const DogTypes = `#graphql
       gender: Gender
       comments: String
       litter: Litter
+      isDeceased: Int
     }
     enum Gender {
       M
@@ -38,6 +39,7 @@ export const DogTypes = `#graphql
       gender: Gender
       comments: String
       litter: ID
+      isDeceased: Int
     }
     input DogUpdateDataInput {
       breed: ID
@@ -51,10 +53,12 @@ export const DogTypes = `#graphql
       gender: Gender
       comments: String
       litter: ID
+      isDeceased: Int
     }
     input DogFilter {
       breed: ID
       breeder: ID
+      at: ID
       owner: ID
       name: String
       callName: String
