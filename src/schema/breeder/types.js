@@ -22,7 +22,7 @@ export const BreederTypes = `#graphql
     }
     extend type Query {
       breeder(id: ID): Breeder
-      breeders: [Breeder]
+      breeders(filters: BreederFilters, orderBy: OrderBy, pagination: Pagination): [Breeder]
     }
     extend type Mutation {
       breederCreate(data: BreederCreateDataInput!): Breeder
@@ -66,5 +66,9 @@ export const BreederTypes = `#graphql
       youtube: String
       youtubeFollowers: Int
       comments: String
+    }
+    input BreederFilters {
+      name: String
+      country: String
     }
 `;
