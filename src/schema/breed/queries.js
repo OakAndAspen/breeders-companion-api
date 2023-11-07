@@ -17,7 +17,7 @@ export const BreedQueries = {
 
         // Sort
         let ob = args.orderBy;
-        let orderBy = ob?.field || "lastName";
+        let orderBy = ob?.field || "name";
         let direction = !!ob?.desc ? "desc" : "asc";
         query.orderBy(orderBy, direction)
 

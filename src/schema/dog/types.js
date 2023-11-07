@@ -20,7 +20,7 @@ export const DogTypes = `#graphql
     }
     extend type Query {
       dog(id: ID): Dog
-      dogs: [Dog]
+      dogs(filters: DogFilters, orderBy: OrderBy, pagination: Pagination): [Dog]
     }
     extend type Mutation {
       dogCreate(data: DogCreateDataInput!): Dog
@@ -55,7 +55,7 @@ export const DogTypes = `#graphql
       litter: ID
       isDeceased: Int
     }
-    input DogFilter {
+    input DogFilters {
       breed: ID
       breeder: ID
       at: ID
@@ -63,5 +63,6 @@ export const DogTypes = `#graphql
       name: String
       callName: String
       gender: Gender
+      isDeceased: Int
     }
 `;
