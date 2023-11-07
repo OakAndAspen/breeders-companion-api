@@ -10,7 +10,7 @@ export const LitterTypes = `#graphql
     }
     extend type Query {
       litter(id: ID): Litter
-      litters: [Litter]
+      litters(filters: LitterFilters, orderBy: OrderBy, pagination: Pagination): [Litter]
     }
     extend type Mutation {
       litterCreate(data: LitterCreateDataInput!): Litter
@@ -30,5 +30,11 @@ export const LitterTypes = `#graphql
       breeder: ID
       name: String
       whelpingStartDate: String
+    }
+    input LitterFilters {
+      sire: ID
+      dam: ID
+      breeder: ID
+      name: String
     }
 `;
