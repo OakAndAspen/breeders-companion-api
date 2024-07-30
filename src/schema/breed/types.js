@@ -2,6 +2,7 @@ export const BreedTypes = `#graphql
   type Breed {
     id: ID
     name: String
+    wolfiness: Float
   }
   extend type Query {
     breed(id: ID): Breed
@@ -14,9 +15,11 @@ export const BreedTypes = `#graphql
   }
   input BreedCreateDataInput {
     name: String
+    wolfiness: Float
   }
   input BreedUpdateDataInput {
     name: String
+    wolfiness: Float
   }
   input BreedFilters {
     name: String
