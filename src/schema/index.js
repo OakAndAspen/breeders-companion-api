@@ -7,6 +7,7 @@ import { PersonTypes, PersonQueries, PersonMutations, PersonResolvers } from './
 import { BreederTypes, BreederQueries, BreederMutations, BreederResolvers } from './breeder/index.js'
 import { LitterTypes, LitterQueries, LitterMutations, LitterResolvers } from './litter/index.js'
 import { GeneticTraitTypes, GeneticTraitQueries, GeneticTraitMutations, GeneticTraitResolvers } from './geneticTrait/index.js'
+import { HealthConditionTypes, HealthConditionQueries, HealthConditionMutations, HealthConditionResolvers } from './healthCondition/index.js'
 
 export const typeDefs = `#graphql
      type Query
@@ -20,6 +21,7 @@ export const typeDefs = `#graphql
      ${BreederTypes}
      ${LitterTypes}
      ${GeneticTraitTypes}
+     ${HealthConditionTypes}
 `
 
 export const resolvers = {
@@ -31,7 +33,8 @@ export const resolvers = {
         ... PersonQueries,
         ... BreederQueries,
         ... LitterQueries,
-        ... GeneticTraitQueries
+        ... GeneticTraitQueries,
+        ... HealthConditionQueries
     },
     Mutation: {
         ... AuthMutations,
@@ -41,7 +44,8 @@ export const resolvers = {
         ... PersonMutations,
         ... BreederMutations,
         ... LitterMutations,
-        ... GeneticTraitMutations
+        ... GeneticTraitMutations,
+        ... HealthConditionMutations
     },
     Breed: BreedResolvers,
     User: UserResolvers,
@@ -49,5 +53,6 @@ export const resolvers = {
     Person: PersonResolvers,
     Breeder: BreederResolvers,
     Litter: LitterResolvers,
-    GeneticTrait: GeneticTraitResolvers
+    GeneticTrait: GeneticTraitResolvers,
+    HealthCondition: HealthConditionResolvers
 }
